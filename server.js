@@ -47,11 +47,11 @@ app.use("/auth", loginRoutes);
 app.use("/images/upload", upload1.upload);
 
 //static files
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*",function (req, res) 
-{
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+app.use(express.static(path.join(__dirname, './client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+}); 
+
 
 //Mongoose connection
 const PORT = process.env.PORT || 3001;  //keep backup port to run the server
